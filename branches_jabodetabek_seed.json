@@ -1,0 +1,178 @@
+[
+  {
+    "id": "BM-KG-BOL",
+    "name": "Mandiri KCP Kelapa Gading Bolevar",
+    "type": "KCP",
+    "region": "Region IV / Jakarta 2",
+    "area": "Area Jakarta Kelapa Gading",
+    "branchCode": "124XX",
+    "latitude": -6.1608,
+    "longitude": 106.9074,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-KG-TIM",
+    "name": "Mandiri KCP Kelapa Gading Bolevar Timur",
+    "type": "KCP",
+    "region": "Region IV / Jakarta 2",
+    "area": "Area Jakarta Kelapa Gading",
+    "branchCode": "124XY",
+    "latitude": -6.1604,
+    "longitude": 106.9172,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-KG-BAR",
+    "name": "Mandiri KCP Kelapa Gading Barat",
+    "type": "KCP",
+    "region": "Region IV / Jakarta 2",
+    "area": "Area Jakarta Kelapa Gading",
+    "branchCode": "124XZ",
+    "latitude": -6.1589,
+    "longitude": 106.8958,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-KG-INK",
+    "name": "Mandiri KCP Kelapa Gading Inkopal",
+    "type": "KCP",
+    "region": "Region IV / Jakarta 2",
+    "area": "Area Jakarta Kelapa Gading",
+    "branchCode": "124XA",
+    "latitude": -6.1679,
+    "longitude": 106.9025,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-SUNTER",
+    "name": "Mandiri KCP Sunter",
+    "type": "KCP",
+    "region": "Region IV / Jakarta 2",
+    "area": "Area Jakarta Kelapa Gading",
+    "branchCode": "124SB",
+    "latitude": -6.1448,
+    "longitude": 106.8688,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-PLUIT",
+    "name": "Mandiri KC Jakarta Pluit",
+    "type": "KC",
+    "region": "Region III / Jakarta 1",
+    "area": "Area Jakarta Pluit",
+    "branchCode": "118XX",
+    "latitude": -6.126,
+    "longitude": 106.7904,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-TJPRIOK",
+    "name": "Mandiri KC Tanjung Priok Yos Sudarso",
+    "type": "KC",
+    "region": "Region IV / Jakarta 2",
+    "area": "Area Jakarta Kelapa Gading",
+    "branchCode": "124TP",
+    "latitude": -6.1143,
+    "longitude": 106.8936,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-PULOGADUNG",
+    "name": "Mandiri KC Pulo Gadung",
+    "type": "KC",
+    "region": "Region IV / Jakarta 2",
+    "area": "Area Jakarta Pulogadung",
+    "branchCode": "124PG",
+    "latitude": -6.1902,
+    "longitude": 106.8893,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-BEKASI",
+    "name": "Mandiri KC Bekasi Juanda",
+    "type": "KC",
+    "region": "Region V / Jakarta 3",
+    "area": "Area Bekasi",
+    "branchCode": "126BJ",
+    "latitude": -6.2383,
+    "longitude": 107.0011,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-BOGOR",
+    "name": "Mandiri KC Bogor Juanda",
+    "type": "KC",
+    "region": "Region V / Jakarta 3",
+    "area": "Area Bogor",
+    "branchCode": "127BG",
+    "latitude": -6.5971,
+    "longitude": 106.7995,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-DEPOK",
+    "name": "Mandiri KC Depok Margonda",
+    "type": "KC",
+    "region": "Region V / Jakarta 3",
+    "area": "Area Depok",
+    "branchCode": "127DP",
+    "latitude": -6.3751,
+    "longitude": 106.8336,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-TANGERANG",
+    "name": "Mandiri KC Tangerang Ki Samaun",
+    "type": "KC",
+    "region": "Region III / Jakarta 1",
+    "area": "Area Tangerang Ki Samaun",
+    "branchCode": "155TK",
+    "latitude": -6.1783,
+    "longitude": 106.6327,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-SERPONG",
+    "name": "Mandiri KC Tangerang Gading Serpong",
+    "type": "KC",
+    "region": "Region III / Jakarta 1",
+    "area": "Area Tangerang Gading Serpong",
+    "branchCode": "176GS",
+    "latitude": -6.2431,
+    "longitude": 106.628,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-CENGKARENG",
+    "name": "Mandiri KC Cengkareng",
+    "type": "KC",
+    "region": "Region III / Jakarta 1",
+    "area": "Area Jakarta Daan Mogot",
+    "branchCode": "118CG",
+    "latitude": -6.1446,
+    "longitude": 106.7344,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-KUNINGAN",
+    "name": "Mandiri KC Jakarta Kuningan",
+    "type": "KC",
+    "region": "Region IV / Jakarta 2",
+    "area": "Area Jakarta Sudirman",
+    "branchCode": "121KN",
+    "latitude": -6.2247,
+    "longitude": 106.8307,
+    "dataStatus": "seed; replace with official branch coordinates"
+  },
+  {
+    "id": "BM-PONDOKINDAH",
+    "name": "Mandiri KC Pondok Indah",
+    "type": "KC",
+    "region": "Region IV / Jakarta 2",
+    "area": "Area Jakarta Pondok Indah",
+    "branchCode": "122PI",
+    "latitude": -6.2659,
+    "longitude": 106.7828,
+    "dataStatus": "seed; replace with official branch coordinates"
+  }
+]

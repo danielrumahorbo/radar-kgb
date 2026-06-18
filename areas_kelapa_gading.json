@@ -1,0 +1,190 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "KG-01",
+        "area": "Boulevard Barat / MOI",
+        "segment": "commercial mall corridor",
+        "target_lvm": 120,
+        "target_edc": 45
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              106.886,
+              -6.158
+            ],
+            [
+              106.902,
+              -6.158
+            ],
+            [
+              106.904,
+              -6.174
+            ],
+            [
+              106.889,
+              -6.178
+            ],
+            [
+              106.886,
+              -6.158
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "KG-02",
+        "area": "Boulevard Raya / La Piazza",
+        "segment": "main boulevard F&B",
+        "target_lvm": 150,
+        "target_edc": 60
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              106.9,
+              -6.154
+            ],
+            [
+              106.916,
+              -6.154
+            ],
+            [
+              106.918,
+              -6.168
+            ],
+            [
+              106.904,
+              -6.174
+            ],
+            [
+              106.9,
+              -6.154
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "KG-03",
+        "area": "Gading Kirana / Timur",
+        "segment": "ruko premium east",
+        "target_lvm": 115,
+        "target_edc": 40
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              106.914,
+              -6.154
+            ],
+            [
+              106.93,
+              -6.155
+            ],
+            [
+              106.93,
+              -6.172
+            ],
+            [
+              106.918,
+              -6.171
+            ],
+            [
+              106.914,
+              -6.154
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "KG-04",
+        "area": "Pegangsaan Dua / Perintis",
+        "segment": "residential-commerce hybrid",
+        "target_lvm": 90,
+        "target_edc": 25
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              106.904,
+              -6.171
+            ],
+            [
+              106.929,
+              -6.172
+            ],
+            [
+              106.926,
+              -6.192
+            ],
+            [
+              106.906,
+              -6.191
+            ],
+            [
+              106.904,
+              -6.171
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "KG-05",
+        "area": "Sunter Link / Kelapa Kopyor",
+        "segment": "laundry-service dense",
+        "target_lvm": 100,
+        "target_edc": 30
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              106.886,
+              -6.176
+            ],
+            [
+              106.906,
+              -6.174
+            ],
+            [
+              106.906,
+              -6.193
+            ],
+            [
+              106.889,
+              -6.194
+            ],
+            [
+              106.886,
+              -6.176
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "C-BCA-KG",
+    "bank": "BCA",
+    "name": "BCA Kelapa Gading",
+    "latitude": -6.1602,
+    "longitude": 106.9047,
+    "type": "Competitor",
+    "dataStatus": "seed sample"
+  },
+  {
+    "id": "C-BCA-MOI",
+    "bank": "BCA",
+    "name": "BCA Mall of Indonesia",
+    "latitude": -6.1517,
+    "longitude": 106.891,
+    "type": "Competitor",
+    "dataStatus": "seed sample"
+  },
+  {
+    "id": "C-BRI-KG",
+    "bank": "BRI",
+    "name": "BRI Kelapa Gading",
+    "latitude": -6.1625,
+    "longitude": 106.9079,
+    "type": "Competitor",
+    "dataStatus": "seed sample"
+  },
+  {
+    "id": "C-BNI-KG",
+    "bank": "BNI",
+    "name": "BNI Kelapa Gading",
+    "latitude": -6.1642,
+    "longitude": 106.9134,
+    "type": "Competitor",
+    "dataStatus": "seed sample"
+  },
+  {
+    "id": "C-BCA-PIK",
+    "bank": "BCA",
+    "name": "BCA PIK",
+    "latitude": -6.108,
+    "longitude": 106.7406,
+    "type": "Competitor",
+    "dataStatus": "seed sample"
+  },
+  {
+    "id": "C-BRI-SUNTER",
+    "bank": "BRI",
+    "name": "BRI Sunter",
+    "latitude": -6.1462,
+    "longitude": 106.8675,
+    "type": "Competitor",
+    "dataStatus": "seed sample"
+  }
+]
