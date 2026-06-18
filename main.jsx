@@ -458,8 +458,7 @@ function App() {
     const visited = merchants.filter((m) => m.visitStatus && m.visitStatus !== 'Belum Dikunjungi').length;
     const followup = merchants.filter((m) => ['Follow-up', 'Butuh Follow-up'].includes(m.visitStatus) || m.nextFollowupDate).length;
     const competitor = merchants.filter((m) => m.competitorBank).length;
-    const converted = merchants.filter((m) => ['Converted', 'Sudah Onboarding', 'Existing'].includes(m.pipelineStatus) || m.lvmStatus !== 'Non-LVM').length;
-    return { total, visited, followup, competitor, converted, coverage: total ? Math.round((converted / total) * 100) : 0 };
+    return { total, visited, followup, competitor };
   }, [merchants]);
 
   const uniqueAreas = useMemo(() => {
@@ -561,19 +560,27 @@ function App() {
       const index = buildLvmIndex(rows);
       const merged = index.length ? index : pendingLvmRows;
       setPendingLvmRows(merged);
+      setImportSummary((prev) => prev ? { ...prev, lvmRead: merged.length } : { lvmRead: merged.length });
       setMessage(`Data LVM dibaca: ${merged.length} record.`);
       return;
     }
     const lvmIndex = pendingLvmRows.length ? pendingLvmRows : buildLvmIndex(lvmSeed);
     const normalized = rows.map((r, i) => normalizeUploadedMerchant(r, i, lvmIndex)).filter((m) => m.latitude && m.longitude);
     setPendingRows(normalized);
+    const matchedCount = normalized.filter((m) => m.lvmStatus !== 'Non-LVM').length;
+    const unmatchedCount = normalized.filter((m) => m.lvmStatus === 'Non-LVM').length;
     const summary = {
       totalRows: rows.length,
       validCoords: normalized.length,
-      existing: normalized.filter((m) => m.lvmStatus !== 'Non-LVM').length,
-      nonLvm: normalized.filter((m) => m.lvmStatus === 'Non-LVM').length,
+      existing: matchedCount,
+      nonLvm: unmatchedCount,
       highPriority: normalized.filter((m) => m.priorityScore >= 70).length,
-      needReview: rows.length - normalized.length
+      needReview: rows.length - normalized.length,
+      merchantRead: rows.length,
+      lvmRead: lvmIndex.length,
+      matched: matchedCount,
+      unmatched: unmatchedCount,
+      readyForMap: normalized.length
     };
     setImportSummary(summary);
     setMessage(`Easy Scrap dibaca: ${normalized.length} titik valid dari ${rows.length} baris.`);
@@ -771,7 +778,6 @@ function App() {
             <Kpi label="Belum Visit" value={merchants.filter((m) => m.visitStatus === 'Belum Dikunjungi').length} note="butuh kunjungan awal" icon={<Route />} />
             <Kpi label="Follow-up Aktif" value={kpis.followup} note="punya next action" icon={<CalendarDays />} />
             <Kpi label="Non-LVM" value={merchants.filter((m) => m.lvmStatus === 'Non-LVM').length} note="prospek akuisisi" icon={<Users />} />
-            <Kpi label="Coverage Mandiri" value={`${kpis.coverage}%`} note="USAK/UREG/existing" icon={<CheckCircle2 />} />
           </section>
         )}
 
@@ -1256,6 +1262,7 @@ function MerchantDetailPanel({ merchant, onVisit, visits }) {
         <span>{merchant.visitStatus}</span>
         {merchant.competitorBank && <span className="danger">Kompetitor: {merchant.competitorBank}</span>}
       </div>
+      <button className="btn yellow full" onClick={onVisit}><ClipboardCheck size={17} />Catat / Update Visit</button>
       <section className="drawer-section detail-address-card">
         <div className="section-title-row">
           <strong>Alamat Merchant</strong>
@@ -1275,7 +1282,6 @@ function MerchantDetailPanel({ merchant, onVisit, visits }) {
         <strong>Rekomendasi Tindakan</strong>
         <p>{recommendation(merchant)}</p>
       </section>
-      <button className="btn yellow full" onClick={onVisit}><ClipboardCheck size={17} />Catat / Update Visit</button>
       <section className="drawer-section">
         <strong>Visit History</strong>
         {visits.length ? visits.slice(0, 4).map((v) => (
@@ -1305,6 +1311,7 @@ function MerchantDrawer({ merchant, visits, onClose, onVisit }) {
         <span>{merchant.visitStatus}</span>
         {merchant.competitorBank && <span className="danger">{merchant.competitorBank}</span>}
       </div>
+      <button className="btn yellow full" onClick={onVisit}><ClipboardCheck size={17} />Catat / Update Visit</button>
       <section className="drawer-section">
         <div className="section-title-row">
           <strong>Alamat</strong>
@@ -1322,7 +1329,6 @@ function MerchantDrawer({ merchant, visits, onClose, onVisit }) {
         <strong>Rekomendasi</strong>
         <p>{recommendation(merchant)}</p>
       </section>
-      <button className="btn yellow full" onClick={onVisit}><ClipboardCheck size={17} />Catat / Update Visit</button>
       <section className="drawer-section">
         <strong>Visit History</strong>
         {visits.length ? visits.slice(0, 5).map((v) => <div className="timeline" key={v.id}><b>{v.visit_date}</b><span>{v.visit_result} · {v.officer_name || 'Petugas'}</span><small>{v.notes || v.next_action}</small></div>) : <p>Belum ada catatan visit.</p>}
@@ -1350,12 +1356,11 @@ function ImportModal({ onClose, onRead, summary, onPublish, pendingCount, lvmCou
         <div className="summary-card">
           <strong>Import Summary</strong>
           <div className="summary-grid">
-            <span>Pending publish <b>{pendingCount}</b></span>
-            <span>LVM index <b>{lvmCount}</b></span>
-            <span>Koordinat valid <b>{summary?.validCoords ?? 0}</b></span>
-            <span>High priority <b>{summary?.highPriority ?? 0}</b></span>
-            <span>Existing LVM <b>{summary?.existing ?? 0}</b></span>
-            <span>Need review <b>{summary?.needReview ?? 0}</b></span>
+            <span>Merchant terbaca dari Easy Scrap <b>{summary?.merchantRead ?? pendingCount}</b></span>
+            <span>Data LVM terbaca <b>{summary?.lvmRead ?? lvmCount}</b></span>
+            <span>Berhasil dicocokkan <b>{summary?.matched ?? 0}</b></span>
+            <span>Belum cocok <b>{summary?.unmatched ?? 0}</b></span>
+            <span>Siap ditampilkan di maps <b>{summary?.readyForMap ?? pendingCount}</b></span>
           </div>
         </div>
         <div className="modal-actions"><button className="btn ghost" onClick={onClose}>Batal</button><button className="btn blue" onClick={onPublish}><Save size={16} />Publish to Radar</button></div>
